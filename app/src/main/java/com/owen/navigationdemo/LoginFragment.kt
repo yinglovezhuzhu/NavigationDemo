@@ -32,6 +32,11 @@ class LoginFragment : Fragment() {
             // 传递参数
             Navigation.findNavController(view).navigate(R.id.action_loginFragment_to_registerFragment, args)
         }
+
+        arguments?.keySet()?.forEach {
+            Log.e("BBBBB", "${it} ===== ${arguments?.get(it)}")
+        }
+
         return view
     }
 

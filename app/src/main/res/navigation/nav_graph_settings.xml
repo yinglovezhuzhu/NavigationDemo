@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/Settings"
+    app:startDestination="@+id/settingsFragment">
+
+
+    <!-- 全局操作，在navigation标签下声明 -->
+    <action
+        android:id="@+id/action_to_settings_more"
+        app:destination="@+id/commonFragment"
+        app:enterAnim="@anim/slide_in_right"
+        app:exitAnim="@anim/slide_out_left"
+        app:popEnterAnim="@anim/slide_in_left"
+        app:popExitAnim="@anim/slide_out_right" />
+
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.owen.navigationdemo.SettingsFragment"
+        android:label="HomeFragment"
+        tools:layout="@layout/fragment_settings">
+        <action
+            android:id="@+id/action_settingsFragment_to_accountSettingsFragment"
+            app:destination="@+id/accountSettingFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_settingsFragment_to_safeSettingsFragment"
+            app:destination="@+id/safeSettingFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_settingsFragment_to_normalSettingsFragment"
+            app:destination="@+id/normalSettingFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/accountSettingFragment"
+        android:name="com.owen.navigationdemo.AccountSettingsFragment"
+        android:label="accountSettingFragment"
+        tools:layout="@layout/fragment_settings_account" />
+    <fragment
+        android:id="@+id/safeSettingFragment"
+        android:name="com.owen.navigationdemo.SafeSettingsFragment"
+        android:label="safeSettingFragment"
+        tools:layout="@layout/fragment_settings_safe" />
+    <fragment
+        android:id="@+id/normalSettingFragment"
+        android:name="com.owen.navigationdemo.NormalSettingsFragment"
+        android:label="normalSettingFragment"
+        tools:layout="@layout/fragment_settings_normal" />
+
+    <fragment
+        android:id="@+id/commonFragment"
+        android:name="com.owen.navigationdemo.CommonFragment"
+        android:label="CommonFragment"
+        tools:layout="@layout/fragment_common" />
+    <deepLink
+        android:id="@+id/deepLink"
+        app:uri="https://www.owen.com" />
+</navigation>
