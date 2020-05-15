@@ -1,10 +1,12 @@
 package com.owen.navigationdemo
 
 import android.os.Bundle
+import android.text.TextUtils
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.EditText
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 
@@ -35,6 +37,12 @@ class LoginFragment : Fragment() {
 
         arguments?.keySet()?.forEach {
             Log.e("BBBBB", "${it} ===== ${arguments?.get(it)}")
+        }
+
+        val etAccount =  view.findViewById<EditText>(R.id.etAccount);
+        val account = arguments?.getString("uname");
+        if(!TextUtils.isEmpty(account)) {
+                etAccount.setText(account)
         }
 
         return view
