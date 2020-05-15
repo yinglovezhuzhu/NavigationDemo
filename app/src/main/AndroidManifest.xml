@@ -15,6 +15,18 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+            <!-- 启用导航图中的隐式深层链接 -->
+            <nav-graph android:value="@navigation/nav_graph" />
+
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.VIEW" />-->
+<!--                <category android:name="android.intent.category.DEFAULT" />-->
+<!--                <category android:name="android.intent.category.BROWSABLE" />-->
+<!--                <data android:scheme="https"-->
+<!--                    android:host="www.owen.com"-->
+<!--                    android:path="/" />-->
+<!--            </intent-filter>-->
         </activity>
 
         <activity android:name=".UploadAvatarActivity" />

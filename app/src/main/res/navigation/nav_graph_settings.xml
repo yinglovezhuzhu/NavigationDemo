@@ -64,7 +64,4 @@
         android:name="com.owen.navigationdemo.CommonFragment"
         android:label="CommonFragment"
         tools:layout="@layout/fragment_common" />
-    <deepLink
-        android:id="@+id/deepLink"
-        app:uri="https://www.owen.com" />
 </navigation>

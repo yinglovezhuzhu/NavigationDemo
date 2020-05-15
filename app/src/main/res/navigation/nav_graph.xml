@@ -17,11 +17,6 @@
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right" >
-            <argument
-                android:name="type"
-                app:argType="integer"
-                android:defaultValue="0"
-                app:nullable="false"/>
         </action>
         <action
             android:id="@+id/action_home_to_settings"
@@ -44,6 +39,21 @@
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right"/>
+        <argument
+            android:name="type"
+            app:argType="integer"
+            android:defaultValue="0"
+            app:nullable="false"/>
+        <argument
+            android:name="uname"
+            app:argType="string"
+            android:defaultValue="@null"
+            app:nullable="true"/>
+
+        <deepLink
+            android:id="@+id/settingsDeepLink"
+            app:uri="https://www.owen.com/?type={type}&amp;uname={uname}"
+            android:autoVerify="false"/>
     </fragment>
     <fragment
         android:id="@+id/registerFragment"
@@ -74,6 +84,16 @@
             android:name="com.owen.navigationdemo.SettingsFragment"
             android:label="HomeFragment"
             tools:layout="@layout/fragment_settings" >
+            <argument
+                android:name="type"
+                app:argType="integer"
+                android:defaultValue="0"
+                app:nullable="false"/>
+            <argument
+                android:name="uname"
+                app:argType="string"
+                android:defaultValue="@null"
+                app:nullable="false"/>
             <action
                 android:id="@+id/action_settingsFragment_to_accountSettingsFragment"
                 app:destination="@+id/accountSettingFragment"

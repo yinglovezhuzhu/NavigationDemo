@@ -37,6 +37,7 @@ class HomeFragment: Fragment() {
             // Kotlin 扩展方法检索当前导航宿主的导航控制器
             val navController = findNavController()
             navController.navigate(R.id.action_homeFragment_to_loginFragment, Bundle().also {
+//                it.putString("uname", "owen0001")
                 it.putInt("type", 2)
             })
         }

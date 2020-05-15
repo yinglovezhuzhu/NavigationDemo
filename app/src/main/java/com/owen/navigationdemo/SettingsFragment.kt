@@ -1,6 +1,7 @@
 package com.owen.navigationdemo
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -36,6 +37,10 @@ class SettingsFragment: Fragment() {
         view.findViewById<TextView>(R.id.tvSettings3).setOnClickListener {
             // Kotlin 扩展方法检索当前导航宿主的导航控制器
             findNavController().navigate(R.id.action_settingsFragment_to_normalSettingsFragment)
+        }
+
+        arguments?.keySet()?.forEach {
+            Log.e("SettingsFragment", "${it} ===== ${arguments?.get(it)}")
         }
 
         return view
